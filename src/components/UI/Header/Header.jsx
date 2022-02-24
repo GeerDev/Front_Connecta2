@@ -14,8 +14,10 @@ const Header = () => {
         <ul className = "navlist">
         <Link to="/home"><li>Home</li></Link>
         <Link to="/profile"><li>Profile</li></Link>
+        <Link to="/login"><li>Login</li></Link>
+        <Link to="/register"><li>Register</li></Link>
         </ul>
-        <div className="logut">
+        <div className="logout">
         <Link to="/logout"><span>Logout</span></Link>
         </div>
     </nav>
