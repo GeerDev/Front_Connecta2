@@ -6,7 +6,6 @@ import Home from './components/Home/Home'
 import PostDetail from './components/PostDetail/PostDetail'
 import Profile from './components/Profile/Profile'
 
-
 import './App.css';
 
 function App() {
@@ -19,7 +18,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/postdetail" element={<PostDetail />} />
-          <Route path="/profile" element={<Profile />} />   
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/logout" element={<Login />} />   
       </Routes>
     </Router>
   );
