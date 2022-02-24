@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import {login} from '../../../features/auth/authSlice'
 
 import './Login.css';
 
@@ -8,16 +10,21 @@ const Login = () => {
     email:'',
     password:''
   })
+
   const {email,password} = formData
+  
   const onChange = (e)=>{
       setFormData((prevState)=> ({
           ...prevState,
           [e.target.name]:e.target.value,
       }))
   }
+
+  const dispatch = useDispatch()
+
   const onSubmit = (e) => {
       e.preventDefault()
-      console.log('formData',formData)
+      dispatch(login(formData))
   }
 
   return (
