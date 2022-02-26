@@ -11,11 +11,9 @@ const Header = () => {
   const { user } = useSelector((state) => state.auth);
   const onLogout = (e) => {
     e.preventDefault();
-    console.log("Holi")
     dispatch(logout());
     navigate("/");
   };
-
 
   return (
     <nav className = "navbar">

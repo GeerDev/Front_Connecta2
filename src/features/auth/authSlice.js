@@ -1,8 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import authService from "./authService";
 
+const user = JSON.parse(localStorage.getItem("user"));
+
 const initialState = {
-  user: null,
+  user: user ? user : null,
+  message: ''
 };
 
 export const authSlice = createSlice({
@@ -14,25 +17,36 @@ export const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload;
       })
+      .addCase(login.rejected, (state, action) => {
+        state.message = action.payload;
+      })
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
       })
+      .addCase(register.fulfilled, (state, action) => {
+        state.message = action.payload;
+      })
+      .addCase(register.rejected, (state, action) => {
+        state.message = action.payload;
+      });
   }
 });
 
-export const register = createAsyncThunk("auth/register", async (user) => {
+export const register = createAsyncThunk("auth/register", async (user, thunkAPI) => {
   try {
     return await authService.register(user);
   } catch (error) {
-    console.error(error);
+    const message = error.response.data;
+    return thunkAPI.rejectWithValue(message);
   }
 });
 
-export const login = createAsyncThunk("auth/login", async (user) => {
+export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
   try {
     return await authService.login(user);
   } catch (error) {
-    console.error(error);
+    const message = error.response.data;
+    return thunkAPI.rejectWithValue(message);
   }
 });
 
