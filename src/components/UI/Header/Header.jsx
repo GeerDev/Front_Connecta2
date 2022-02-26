@@ -1,8 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from '../../../features/auth/authSlice';
 
 import './Header.css';
 
 const Header = () => {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const onLogout = (e) => {
+    e.preventDefault();
+    console.log("Holi")
+    dispatch(logout());
+    navigate("/");
+  };
+
+
   return (
     <nav className = "navbar">
         <Link to="/home">
@@ -14,12 +28,17 @@ const Header = () => {
         <ul className = "navlist">
         <Link to="/home"><li>Home</li></Link>
         <Link to="/profile"><li>Profile</li></Link>
-        <Link to="/login"><li>Login</li></Link>
-        <Link to="/register"><li>Register</li></Link>
         </ul>
-        <div className="logout">
-        <Link to="/logout"><span>Logout</span></Link>
-        </div>
+            {user ?
+            <div className="logout">
+            <Link to="/login" onClick={onLogout}><span>Logout</span></Link>
+            </div>
+            :
+            <ul>
+            <Link to="/login"><li>Login</li></Link>
+            <Link to="/register"><li>Register</li></Link>
+            </ul>
+            }
     </nav>
   )
 }

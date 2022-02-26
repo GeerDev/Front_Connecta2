@@ -19,7 +19,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/postdetail" element={<PostDetail />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/logout" element={<Login />} />   
       </Routes>
     </Router>
   );

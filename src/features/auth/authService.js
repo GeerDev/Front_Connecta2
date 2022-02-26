@@ -1,16 +1,11 @@
 import axios from "axios";
 
 const API_URL = "http://localhost:4000";
+const user = JSON.parse(localStorage.getItem("user"));
 
 const register = async (userData) => {
-    try {
-        console.log("1:", userData);
         const res = await axios.post(API_URL + "/users", userData);
-        console.log("2:", res.data);
         return res.data;
-    } catch (error) {
-        console.error(error)
-    }
 };
 
 const login = async(userData)=>{
@@ -21,9 +16,23 @@ const login = async(userData)=>{
     return res.data
 }
 
+const logout = async () => {
+    console.log(user.token)
+    const res = await axios.delete(API_URL + "/users/logout", {
+      headers: {
+        authorization: user?.token,
+      },
+    });
+    if (res.data) {
+      localStorage.removeItem("user");
+    }
+    return res.data;
+  };
+
 const authService = {
   register,
-  login
+  login,
+  logout
 };
 
 export default authService;
