@@ -17,10 +17,10 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getPosts())
-  },[dispatch])
+  },[])
 
   const deletePostNow = ( _id ) => {
-    dispatch(deletePost())
+    dispatch(deletePost( _id ))
   }
 
   const paintPosts = arrayPosts.map((element) => {
