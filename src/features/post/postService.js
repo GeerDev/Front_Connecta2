@@ -7,6 +7,11 @@ const getPosts = async () => {
         return res.data.posts;
 };
 
+const getById = async (_id) => {
+  const res = await axios.get(API_URL + `/posts/id/${_id}`);
+  return res.data;
+};
+
 const addPost = async (post) => {
   const user = JSON.parse(localStorage.getItem("user"));
   const res = await axios.post(API_URL + "/posts", post, {
@@ -29,6 +34,7 @@ const deletePost = async (_id) => {
 
 const postService = {
   getPosts,
+  getById,
   addPost,
   deletePost
 };

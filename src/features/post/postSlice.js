@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import postService from "./postService";
 
 const initialState = {
-  posts: []
+  posts: [],
+  post: {}
 };
 
 export const postSlice = createSlice({
@@ -16,6 +17,9 @@ export const postSlice = createSlice({
       })
       .addCase(addPost.fulfilled, (state, action) => {
         state.posts = [action.payload, ...state.posts]
+      })
+      .addCase(getById.fulfilled, (state, action) => {
+        state.post = action.payload;
       })
       .addCase(deletePost.fulfilled, (state, action) => {
         state.posts = state.posts.filter((post) => post._id !== action.payload.post._id)
@@ -35,6 +39,15 @@ export const getPosts = createAsyncThunk("post/getPosts", async (thunkAPI) => {
 export const addPost = createAsyncThunk("post/addPost", async (post, thunkAPI) => {
   try {
     return await postService.addPost(post);
+  } catch (error) {
+    const message = error.response.data;
+    return thunkAPI.rejectWithValue(message);
+  }
+});
+
+export const getById = createAsyncThunk("posts/getById", async (_id, thunkAPI) => {
+  try {
+    return await postService.getById(_id);
   } catch (error) {
     const message = error.response.data;
     return thunkAPI.rejectWithValue(message);

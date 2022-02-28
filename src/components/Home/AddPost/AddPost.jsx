@@ -32,7 +32,7 @@ const AddPost = () => {
         <input type="text" name="title" value={title} onChange={onChange}/>
         <input type="text" name="description" value={description} onChange={onChange}/>
     <button type="submit">Añade un Post Crack</button>
-</form>
+    </form>
   )
 }
 
