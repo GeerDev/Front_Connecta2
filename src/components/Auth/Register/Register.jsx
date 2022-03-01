@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 import {register} from '../../../features/auth/authSlice'
 
 import './Register.css';
 
 const Register = () => {
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
       name:'',
@@ -24,6 +27,9 @@ const Register = () => {
   const onSubmit = (e) => {
       e.preventDefault()
       dispatch(register(formData))
+      navigate('/home', {
+        replace: true
+    })
   }
   
   return (

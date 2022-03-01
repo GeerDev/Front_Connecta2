@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 import { login } from '../../../features/auth/authSlice'
 
 import './Login.css';
 
 const Login = () => {
+
+  const navigate = useNavigate();
 
   const { message } = useSelector( (state) => state.auth )
 
@@ -33,6 +36,9 @@ const Login = () => {
   const onSubmit = (e) => {
       e.preventDefault()
       dispatch(login(formData))
+      navigate('/home', {
+        replace: true
+    })
   }
 
   return (
