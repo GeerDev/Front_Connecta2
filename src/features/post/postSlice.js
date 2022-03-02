@@ -33,6 +33,24 @@ export const postSlice = createSlice({
       .addCase(deletePost.fulfilled, (state, action) => {
         state.posts = state.posts.filter((post) => post._id !== action.payload.post._id)
       })
+      .addCase(like.fulfilled, (state, action) => {
+        const posts = state.posts.map((element) => {
+          if (element._id === action.payload._id) {
+            element = action.payload;
+          }
+          return element
+      })
+      state.posts = posts
+      })
+      .addCase(dislike.fulfilled, (state, action) => {
+        const posts = state.posts.map((element) => {
+          if (element._id === action.payload._id) {
+            element = action.payload;
+          }
+          return element
+      })
+      state.posts = posts
+      })
   }
 });
 
@@ -75,6 +93,24 @@ export const editPost = createAsyncThunk("post/editPost", async (post, thunkAPI)
 export const deletePost = createAsyncThunk("post/deletePost", async (_id, thunkAPI) => {
   try {
     return await postService.deletePost(_id);
+  } catch (error) {
+    const message = error.response.data;
+    return thunkAPI.rejectWithValue(message);
+  }
+});
+
+export const like = createAsyncThunk("post/like", async (_id, thunkAPI) => {
+  try {
+    return await postService.like(_id);
+  } catch (error) {
+    const message = error.response.data;
+    return thunkAPI.rejectWithValue(message);
+  }
+});
+
+export const dislike = createAsyncThunk("post/dislike", async (_id, thunkAPI) => {
+  try {
+    return await postService.dislike(_id);
   } catch (error) {
     const message = error.response.data;
     return thunkAPI.rejectWithValue(message);

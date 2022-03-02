@@ -42,12 +42,34 @@ const deletePost = async (_id) => {
   return res.data;
 };
 
+const like = async (_id) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const res = await axios.put(API_URL + `/posts/like/${_id}`,{}, {
+      headers: {
+        authorization: user?.token
+      },
+    } );
+  return res.data;
+};
+
+const dislike = async (_id) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const res = await axios.put(API_URL + `/posts/dislike/${_id}`,{}, {
+      headers: {
+        authorization: user?.token
+      },
+    } );
+  return res.data;
+};
+
 const postService = {
   getPosts,
   getById,
   addPost,
   editPost,
-  deletePost
+  deletePost,
+  like,
+  dislike
 };
 
 export default postService;
