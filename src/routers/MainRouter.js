@@ -10,7 +10,7 @@ export const MainRoutes = () => {
         <Header />
         <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/postdetail" element={<PostDetail />} />
+            <Route path="/postdetail/:_id" element={<PostDetail />} />
             <Route path="/profile/:_id" element={<Profile />} />
         </Routes>
         </>

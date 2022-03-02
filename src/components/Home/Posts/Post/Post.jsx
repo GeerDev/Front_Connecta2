@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 import { deletePost, getById } from '../../../../features/post/postSlice'
 
 import './Post.css';
@@ -24,6 +25,9 @@ const Post = ({_id, title, description}) => {
     <div key = {_id}>
         <h2>{title}</h2>
         <p>{description}</p>
+        <Link to={`/postdetail/${_id}`}>
+          <p>Go To Post Detail</p>
+        </Link>
         <button onClick={() => deletePostNow(_id)}>Borrame Crack</button>
         <button onClick={() => showModal(_id)}>Open Modal</button>
         <UIModal visible = {isModalVisible} setVisible = {setIsModalVisible}/>
