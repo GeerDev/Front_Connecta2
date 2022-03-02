@@ -21,6 +21,15 @@ export const postSlice = createSlice({
       .addCase(getById.fulfilled, (state, action) => {
         state.post = action.payload;
       })
+      .addCase(editPost.fulfilled, (state, action) => {
+        const posts = state.posts.map((element) => {
+          if (element._id === action.payload.post._id) {
+            element = action.payload.post;
+          }
+          return element
+      })
+      state.posts = posts
+      })
       .addCase(deletePost.fulfilled, (state, action) => {
         state.posts = state.posts.filter((post) => post._id !== action.payload.post._id)
       })
@@ -54,14 +63,14 @@ export const getById = createAsyncThunk("posts/getById", async (_id, thunkAPI) =
   }
 });
 
-// export const editPost = createAsyncThunk("post/editPost", async (post, thunkAPI) => {
-//   try {
-//     return await postService.editPost(post);
-//   } catch (error) {
-//     const message = error.response.data;
-//     return thunkAPI.rejectWithValue(message);
-//   }
-// });
+export const editPost = createAsyncThunk("post/editPost", async (post, thunkAPI) => {
+  try {
+    return await postService.editPost(post);
+  } catch (error) {
+    const message = error.response.data;
+    return thunkAPI.rejectWithValue(message);
+  }
+});
 
 export const deletePost = createAsyncThunk("post/deletePost", async (_id, thunkAPI) => {
   try {

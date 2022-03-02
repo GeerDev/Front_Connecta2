@@ -22,6 +22,16 @@ const addPost = async (post) => {
   return res.data;
 };
 
+const editPost = async (post) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const res = await axios.put(API_URL + `/posts/${post._id}`, post, {
+    headers: {
+      authorization: user?.token,
+    },
+  });
+  return res.data;
+};
+
 const deletePost = async (_id) => {
   const user = JSON.parse(localStorage.getItem("user"));
   const res = await axios.delete(API_URL + `/posts/${_id}`,{
@@ -36,6 +46,7 @@ const postService = {
   getPosts,
   getById,
   addPost,
+  editPost,
   deletePost
 };
 

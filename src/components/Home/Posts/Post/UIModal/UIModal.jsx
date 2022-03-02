@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addPost } from '../../../../../features/post/postSlice'
+import { editPost } from '../../../../../features/post/postSlice'
 
 import 'antd/dist/antd.css';
 
@@ -15,8 +15,8 @@ const UIModal = ({visible, setVisible}) => {
     setFormData({...post})
    },[post])
  
-   const handleOk = () => {
-     dispatch(addPost(formData))
+   const handleOk = (_id) => {
+     dispatch(editPost(formData))
      setVisible(false)
    };
  

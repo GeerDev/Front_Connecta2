@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 import { login } from '../../../features/auth/authSlice'
@@ -26,12 +26,6 @@ const Login = () => {
   }
 
   const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //   if (message) {
-  //     console.log(message);
-  //   }
-  // }, [message]);
 
   const onSubmit = (e) => {
       e.preventDefault()
