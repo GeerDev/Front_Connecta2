@@ -12,9 +12,15 @@ const getInfoUser = async () => {
         return res.data;
 };
 
-const userService = {
-  getInfoUser
+const searchByName = async (name) => {
+        const res = await axios(API_URL + `/users/name/${name}`);
+        console.log("Resultado:", res.data[0])
+        return res.data;
+};
 
+const userService = {
+  getInfoUser,
+  searchByName
 };
 
 export default userService;
