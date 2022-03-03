@@ -30,7 +30,7 @@ const Login = () => {
   const onSubmit = (e) => {
       e.preventDefault()
       dispatch(login(formData))
-      navigate('/home', {
+      navigate('/main/home', {
         replace: true
     })
   }

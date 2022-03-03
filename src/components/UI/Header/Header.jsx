@@ -17,15 +17,15 @@ const Header = () => {
 
   return (
     <nav className = "navbar">
-        <Link to="/home">
+        <Link to="/main/home">
         <div className='logo'>
             {/* <img src={} alt="Logo Food News"/> */}
             <span className='logo_text'>Reddit Setups</span>
         </div>
         </Link>
         <ul className = "navlist">
-        <Link to="/home"><li>Home</li></Link>
-        <Link to="/profile"><li>Profile</li></Link>
+        <Link to="/main/home"><li>Home</li></Link>
+        <Link to="/main/profile"><li>Profile</li></Link>
         </ul>
             {user ?
             <div className="logout">

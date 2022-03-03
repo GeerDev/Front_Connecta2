@@ -11,7 +11,7 @@ export const MainRoutes = () => {
         <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/postdetail/:_id" element={<PostDetail />} />
-            <Route path="/profile/:_id" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
         </Routes>
         </>
             )

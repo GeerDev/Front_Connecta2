@@ -27,7 +27,7 @@ const Register = () => {
   const onSubmit = (e) => {
       e.preventDefault()
       dispatch(register(formData))
-      navigate('/home', {
+      navigate('/login', {
         replace: true
     })
   }

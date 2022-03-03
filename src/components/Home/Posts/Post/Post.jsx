@@ -30,7 +30,7 @@ const Post = ({_id, title, description, likes}) => {
     <div key = {_id}>
         <h2>{title}</h2>
         <p>{description}</p>
-        <Link to={`/postdetail/${_id}`}>
+        <Link to={`/main/postdetail/${_id}`}>
           <p>Go To Post Detail</p>
         </Link>
         <div>
