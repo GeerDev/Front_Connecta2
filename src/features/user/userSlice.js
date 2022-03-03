@@ -8,7 +8,11 @@ const initialState = {
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+      resetUser: (state) => {
+        state.userNow = {};
+      } 
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getInfoUser.fulfilled, (state, action) => {
@@ -26,4 +30,5 @@ export const getInfoUser = createAsyncThunk("user/getInfoUser", async (thunkAPI)
   }
 });
 
+export const { resetUser } = userSlice.actions;
 export default userSlice.reducer;
