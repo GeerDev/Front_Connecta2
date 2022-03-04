@@ -3,7 +3,7 @@ import userService from "./userService";
 
 const initialState = {
   userNow: {},
-  userSearch: {}
+  userSearch: []
 };
 
 export const userSlice = createSlice({
@@ -12,7 +12,10 @@ export const userSlice = createSlice({
   reducers: {
       resetUser: (state) => {
         state.userNow = {};
-      } 
+      },
+      resetSearch: (state) => {
+        state.userSearch = [];
+      }  
   },
   extraReducers: (builder) => {
     builder
@@ -43,5 +46,5 @@ export const searchByName = createAsyncThunk("user/searchByName", async (name, t
   }
 });
 
-export const { resetUser } = userSlice.actions;
+export const { resetUser, resetSearch } = userSlice.actions;
 export default userSlice.reducer;

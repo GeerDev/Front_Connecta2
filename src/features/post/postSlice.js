@@ -122,7 +122,6 @@ export const dislike = createAsyncThunk("post/dislike", async (_id, thunkAPI) =>
 
 export const addComment = createAsyncThunk("post/addComment", async (comment, thunkAPI) => {
   try {
-    console.log(comment)
     return await postService.addComment(comment);
   } catch (error) {
     const message = error.response.data;

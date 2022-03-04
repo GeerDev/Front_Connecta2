@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getInfoUser, searchByName, resetUser } from '../../features/user/userSlice'
+import { getInfoUser, searchByName, resetUser, resetSearch } from '../../features/user/userSlice'
 
 import './Profile.css';
 
@@ -8,7 +8,6 @@ const Profile = () => {
   
   const dispatch = useDispatch()
   const { userNow, userSearch } = useSelector( state => state.user )
-
   const { name, email, postsIds} = userNow.user || []
 
   const [searchHook, setSearchHook] = useState({
@@ -16,7 +15,6 @@ const Profile = () => {
   })
 
   const { search } = searchHook
-  console.log("Busqueda:", search);
 
   useEffect(() => {
     dispatch(getInfoUser())
@@ -27,10 +25,11 @@ const Profile = () => {
   useEffect( () => {
     if (search.length > 0){
       dispatch(searchByName(search))
-    } 
+    }
+    if (search.length === 0){
+      dispatch(resetSearch())
+    }
   }, [search]);
-    
-  console.log("Estado:", userSearch);
 
   const onChange = (e)=>{
     setSearchHook((prevState)=> ({
@@ -45,7 +44,7 @@ const Profile = () => {
     <p>Hola {name}! Tu email es {email}</p>
     {
      postsIds && postsIds.map(post => (
-        <div>
+        <div key = {post._id}>
         <h3>{ post.title }</h3>
         <p>{ post.description }</p>
         </div>
@@ -57,8 +56,8 @@ const Profile = () => {
                             : (userSearch.length === 0) && <div> No hay resultados: { search } </div>
                         }
                         {
-                          userSearch.map(user => (
-                            <div>
+                          userSearch && userSearch.map(user => (
+                            <div key = {user._id}>
                                 <h3>{ user.name }</h3>
                                 <p>{ user.email }</p>
                             </div>

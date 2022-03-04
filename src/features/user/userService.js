@@ -14,7 +14,6 @@ const getInfoUser = async () => {
 
 const searchByName = async (name) => {
         const res = await axios(API_URL + `/users/name/${name}`);
-        console.log("Resultado:", res.data[0])
         return res.data;
 };
 

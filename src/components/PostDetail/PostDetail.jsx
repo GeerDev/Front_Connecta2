@@ -22,7 +22,7 @@ const PostDetail = () => {
     <div>{ post.title }</div>
     {
      post.comments && post.comments.map(post => (
-        <div key = {post._id}>
+        <div key = {crypto.randomUUID()}>
         <p>{ post.comment }</p>
         </div>
       ))
