@@ -62,6 +62,16 @@ const dislike = async (_id) => {
   return res.data;
 };
 
+const addComment = async (comment) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const res = await axios.put(API_URL + `/posts/comments/${comment._id}`, comment, {
+      headers: {
+        authorization: user?.token
+      },
+    });
+  return res.data;
+};
+
 const postService = {
   getPosts,
   getById,
@@ -69,7 +79,8 @@ const postService = {
   editPost,
   deletePost,
   like,
-  dislike
+  dislike,
+  addComment
 };
 
 export default postService;

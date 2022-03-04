@@ -51,6 +51,9 @@ export const postSlice = createSlice({
       })
       state.posts = posts
       })
+      .addCase(addComment.fulfilled, (state, action) => {
+        state.post = action.payload;
+      })
   }
 });
 
@@ -111,6 +114,16 @@ export const like = createAsyncThunk("post/like", async (_id, thunkAPI) => {
 export const dislike = createAsyncThunk("post/dislike", async (_id, thunkAPI) => {
   try {
     return await postService.dislike(_id);
+  } catch (error) {
+    const message = error.response.data;
+    return thunkAPI.rejectWithValue(message);
+  }
+});
+
+export const addComment = createAsyncThunk("post/addComment", async (comment, thunkAPI) => {
+  try {
+    console.log(comment)
+    return await postService.addComment(comment);
   } catch (error) {
     const message = error.response.data;
     return thunkAPI.rejectWithValue(message);

@@ -13,7 +13,7 @@ const AddPost = () => {
     description:''
   })
 
-  const {title,description} = formData
+  const { title , description } = formData
 
   const onChange = (e)=>{
     setFormData((prevState)=> ({

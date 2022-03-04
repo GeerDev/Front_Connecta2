@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getById } from '../../features/post/postSlice';
 
+import AddComment from "./AddComment/AddComment";
+
 import './PostDetail.css';
 
 const PostDetail = () => {
@@ -16,7 +18,17 @@ const PostDetail = () => {
   }, []);
 
   return (
+    <>
     <div>{ post.title }</div>
+    {
+     post.comments && post.comments.map(post => (
+        <div key = {post._id}>
+        <p>{ post.comment }</p>
+        </div>
+      ))
+    }
+    <AddComment _id = {_id}/>
+    </>
   )
 }
 
