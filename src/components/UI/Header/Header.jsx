@@ -20,7 +20,7 @@ const Header = () => {
         <Link to="/main/home">
         <div className='logo'>
             {/* <img src={} alt="Logo Food News"/> */}
-            <span className='logo_text'>Reddit Setups</span>
+            <span className='logo_text'>Connecta2</span>
         </div>
         </Link>
         <ul className = "navlist">
