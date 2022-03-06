@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editPost } from '../../../../../features/post/postSlice'
 
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.dark.css';
+import './UIModal.css';
 
 import { Modal } from 'antd';
 

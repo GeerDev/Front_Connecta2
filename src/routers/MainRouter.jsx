@@ -4,15 +4,17 @@ import PostDetail from '../components/PostDetail/PostDetail';
 import Profile from '../components/Profile/Profile';
 import Header from '../components/UI/Header/Header';
 
+import './MainRouter.css';
+
 export const MainRoutes = () => {
     return (
-        <>
+        <div className='main'>
         <Header />
         <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/postdetail/:_id" element={<PostDetail />} />
             <Route path="/profile" element={<Profile />} />
         </Routes>
-        </>
+        </div>
             )
 }
