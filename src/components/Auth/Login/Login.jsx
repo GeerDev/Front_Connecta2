@@ -36,12 +36,29 @@ const Login = () => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
-          <input type="email" name="email" value={email} onChange={onChange}/>
-          <input type="password" name="password" value={password} onChange={onChange}/>
+    <main className='login'>
+    <div className='login_image'>
+    <div className='login_message'>
+      <h3>El espacio donde las personas conectan</h3>
+      <p>¿No estas todavia registrad@? ¡Registrate!</p>
+      <button>Crea una cuenta</button>
+    </div>
+    </div>
+    <form onSubmit={onSubmit} className='login_form'>
+      <div className="login_form-logo">
+          <div className='logo'><span></span></div>
+          <h1>Connecta2</h1>
+      </div>
+
+          <h3>Bienvenid@ a Connecta2! Logueate</h3>
+          <input type="email" name="email" value={email} onChange={onChange} placeholder={'Email'}/>
+          <input type="password" name="password" value={password} onChange={onChange} placeholder={'Contraseña'}/>
+          <p>¿Olvidaste la contraseña?</p>
           <button type="submit">Login</button>
-          <div>{message.message}</div>
+          {/* <div>{message.message}</div> */}
     </form>
+    </main>
+
   )
 }
 
