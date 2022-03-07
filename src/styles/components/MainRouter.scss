@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    background-color: $Dark1Color;
+    position: relative;
+}
+
+.routes {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    min-height: 100vh;
+    padding: 1.5em;
+    background-color: $Dark2Color;
+    width: 80%;
+    border-radius: 1em 0 0 1em;
+    position: relative;
+    top: 0;
+    left: 20%;
+}

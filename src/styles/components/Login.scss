@@ -42,7 +42,7 @@
     button {
       background: $InstagramRadialColor;
       @extend %button;
-  
+      
       &:hover {
         background: transparent;
         transform: scale(1.1);
