@@ -18,7 +18,7 @@ const Posts = () => {
   },[])
 
   return (
-    <>
+    <div className='posts'>
     {
       arrayPosts.map(post => (
         <Post 
@@ -27,7 +27,7 @@ const Posts = () => {
             />
       ))
     }
-    </>
+    </div>
   )
 }
 

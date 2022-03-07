@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 import { login } from '../../../features/auth/authSlice'
 
-import './Login.css';
+import '../../../styles/main.scss';
 
 const Login = () => {
 

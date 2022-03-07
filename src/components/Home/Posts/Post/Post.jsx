@@ -27,14 +27,14 @@ const Post = ({_id, title, description, likes}) => {
   const isAlreadyLiked = likes?.includes(user?.user._id);
 
   return (
-    <div key = {_id}>
+    <div key = {_id} className='post'>
         <h2>{title}</h2>
         <p>{description}</p>
         <Link to={`/main/postdetail/${_id}`}>
           <p>Go To Post Detail</p>
         </Link>
         <div>
-        <span>Wish list: {likes?.length}</span>
+        <span>Likes: {likes?.length}</span>
         {isAlreadyLiked ? (
           <HeartFilled  onClick={  isAlreadyLiked  ? () => dispatch(dislike(_id))  : () => dispatch(like(_id))  } />
         ) : (

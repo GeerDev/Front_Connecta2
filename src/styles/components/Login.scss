@@ -1,0 +1,156 @@
+%button {
+  padding: .5em 0;
+  width: 35%;
+  font-size: 1.5em;
+  border: 2px solid transparent;
+  border-image: $InstagramLinearColor;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.login {
+    display: flex;
+    height: 100vh;
+    color: $Ohisawhitecolor;
+    font-family: $font;
+    background-color: $Dark2Color;
+  }
+  
+  .login_image {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(../../assets/Portada.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em 0 0 4em;
+  }
+  
+  .login_message h3 {
+    color: $Ohisawhitecolor;
+    font-size: 3em;
+  }
+  
+  .login_image {
+    p {
+      font-size: 2em;
+    }
+  
+    button {
+      background: $InstagramRadialColor;
+      @extend %button;
+  
+      &:hover {
+        background: transparent;
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .login_form {
+    width: 50%;
+  }
+  
+  .login_form-message {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4em;
+  }
+  
+  .login_form {
+    h1 {
+      color: $Ohisawhitecolor;
+      letter-spacing: .1em;
+      margin-top: .5em;
+      font-size: 3.5em;
+    }
+  
+    h3 {
+      letter-spacing: .1em;
+      color: $Ohisawhitecolor;
+      font-size: 2em;
+    }
+  
+    input {
+      background-color: $Dark1Color;
+      width: 50%;
+      padding: 1em;
+      color: $GrayColor;
+      border-radius: .5em;
+      font-size: 1.3em;
+    }
+  
+    button {
+      background: $Dark2Color;
+      @extend %button;
+  
+      &:hover {
+        background: $InstagramLinearColor;
+        transform: scale(1.1);
+      }
+    }
+  
+    p {
+      color: $GrayColor;
+      width: 50%;
+      text-align: end;
+      cursor: pointer;
+    }
+  
+    .logo {
+      height: 7em;
+      width: 7em;
+      background: $InstagramRadialColor;
+      border-radius: 30%;
+      position: relative;
+  
+      &:before {
+        content: "";
+        background-color: $Ohisawhitecolor;
+        width: 1em;
+        height: 1em;
+        left: 4.5em;
+        right: 0;
+        position: absolute;
+        top: 1.6em;
+        bottom: 0;
+      }
+  
+      &:after {
+        content: "";
+        border: .7em solid $Ohisawhitecolor;
+        border-radius: 100%;
+        width: 3.1em;
+        height: 3.1em;
+        left: 0;
+        right: .5em;
+        position: absolute;
+        margin: auto;
+        top: 2em;
+        bottom: 0;
+      }
+    }
+  
+    span {
+      content: "";
+      background-color: $Ohisawhitecolor;
+      width: .6em;
+      height: 2.7em;
+      right: 2.2em;
+      position: absolute;
+      margin: auto;
+      top: 1.6em;
+    }
+  }
+  
+  .login_form-logo {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+  }
