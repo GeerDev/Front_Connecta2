@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { deletePost, getById, like, dislike } from '../../../../features/post/postSlice'
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 
-import './Post.css';
+import '../../../../styles/main.scss';
 import UIModal from './UIModal/UIModal';
 
-const Post = ({_id, title, description, likes}) => {
+const Post = ({_id, title, description, likes, image}) => {
+
+  console.log(image);
 
   const { user } = useSelector((state) => state.auth);
 
@@ -33,6 +35,7 @@ const Post = ({_id, title, description, likes}) => {
         <Link to={`/main/postdetail/${_id}`}>
           <p>Go To Post Detail</p>
         </Link>
+        {/* <img src={} alt="Imagen Post"/> */}
         <div>
         <span>Likes: {likes?.length}</span>
         {isAlreadyLiked ? (

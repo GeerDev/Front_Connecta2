@@ -4,7 +4,7 @@ import { getPosts } from '../../../features/post/postSlice'
 
 import Post from './Post/Post'
 
-import './Posts.css';
+import '../../../styles/main.scss';
 
 const Posts = () => {
 
