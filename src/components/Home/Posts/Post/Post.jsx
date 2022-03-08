@@ -9,8 +9,6 @@ import UIModal from './UIModal/UIModal';
 
 const Post = ({_id, title, description, likes, image}) => {
 
-  console.log(image);
-
   const { user } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch()

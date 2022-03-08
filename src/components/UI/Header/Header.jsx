@@ -15,12 +15,19 @@ const Header = () => {
     navigate("/");
   };
 
+  if (user === null) return <p>de parrafo</p>
+
   return (
     <nav className = "navbar">
         <Link to="/main/home">
         <div className='logo'>
-            {/* <img src={} alt="Logo Food News"/> */}
             <span className='logo_text'>Connecta2</span>
+            <div className="info_usuario">
+                <img src={`http://localhost:4000/images/users/` + user.user.image } alt="Imagen Usuario Conectado"/>
+                <h4>{user.user.name}</h4>
+                <h4>{user.user.email}</h4>
+            </div>
+            
         </div>
         </Link>
         <ul className = "navlist">
