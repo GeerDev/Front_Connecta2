@@ -6,7 +6,7 @@ import { getById } from '../../features/post/postSlice';
 
 import AddComment from "./AddComment/AddComment";
 
-import './PostDetail.css';
+import '../../styles/main.scss';
 
 const PostDetail = () => {
 

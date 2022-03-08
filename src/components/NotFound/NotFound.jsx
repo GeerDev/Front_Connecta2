@@ -1,3 +1,5 @@
+import '../../styles/main.scss';
+
 const NotFound = () => {
     return (
       <div>404 Page not found</div>

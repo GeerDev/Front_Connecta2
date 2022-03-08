@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInfoUser, searchByName, resetUser, resetSearch } from '../../features/user/userSlice'
 
-import './Profile.css';
+import '../../styles/main.scss';
 
 const Profile = () => {
   

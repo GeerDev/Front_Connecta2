@@ -27,8 +27,7 @@ const AddPost = () => {
     console.log(e.target.imagePost.files[0]);
     e.preventDefault()
     console.log(formData)
-    dispatch(addPost(formData))
-    
+    dispatch(addPost(formData)) 
   }
 
   return (

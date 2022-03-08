@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { addComment } from '../../../features/post/postSlice'
 
+import '../../../styles/main.scss';
+
 const AddComment = ({_id}) => {
 
     const dispatch = useDispatch()
