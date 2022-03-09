@@ -1,9 +1,14 @@
+// .posts {
+//     display: flex;
+//     flex-wrap: wrap;
+//     width: 100%;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     gap: 1em;
+//     padding: 3em;
+// }
+
 .posts {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 1em;
-    padding: 3em;
+  columns: 5 320px;
+  gap: .5em;
 }

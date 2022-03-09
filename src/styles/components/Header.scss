@@ -9,12 +9,23 @@
     position: fixed;
     top: 0;
     left: 0;
+    font-family: $font;
+    span {
+        color: $Ohisawhitecolor;
+        font-size: 2em;
+    }
+    p {
+        color: $Ohisawhitecolor; 
+    }
 }
 
 .navlist {
     display: flex;
     flex-direction: column;
     gap: 2em;
+    li {
+        color: $Ohisawhitecolor;
+    }
 }
 
 .logo {
@@ -22,4 +33,33 @@
     flex-direction: column;
     align-items: center;
     gap: 3em;
+    h4 {
+        color: $GrayColor;
+    }
+}
+
+.info_usuario::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $GrayColor;
+}
+
+.info_usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    img {
+        border-radius: 150px;
+        width: 160px;
+        height: 160px;
+        border:5px solid #fed373;
+    }
+}
+
+.logo_principal {
+    display: flex;
+    gap: 1em;
 }

@@ -1,7 +1,7 @@
 import AddPost from './AddPost/AddPost' 
 import Posts from './Posts/Posts'
 
-import '../../styles/components/Home.scss';
+import '../../styles/main.scss';
 
 const Home = () => {
 

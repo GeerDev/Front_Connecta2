@@ -31,7 +31,7 @@ const AddPost = () => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className='form'>
         <input type="file" name="imagePost" onChange={onChange}/>
         <input type="text" name="title" value={title} onChange={onChange}/>
         <input type="text" name="description" value={description} onChange={onChange}/>

@@ -1,3 +1,7 @@
+.form {
+    display: flex;
+    gap: 1em;
+}
 input {
     background-color: $Dark1Color;
     width: 50%;
@@ -5,4 +9,14 @@ input {
     color: $GrayColor;
     border-radius: .5em;
     font-size: 1.3em;
+}
+
+button {
+    background: $Dark2Color;
+    @extend %button;
+
+    &:hover {
+      background: $InstagramLinearColor;
+      transform: scale(1.1);
+    }
 }

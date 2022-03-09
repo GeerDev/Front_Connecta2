@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from '../../../features/auth/authSlice';
 
+import logo from '../../../assets/Logo.png'
+
 import '../../../styles/main.scss';
 
 const Header = () => {
@@ -21,10 +23,13 @@ const Header = () => {
     <nav className = "navbar">
         <Link to="/main/home">
         <div className='logo'>
+          <div className="logo_principal">
+          <img src={logo} alt="Logo Connecta2" width={40}/>
             <span className='logo_text'>Connecta2</span>
+            </div>
             <div className="info_usuario">
-                <img src={`http://localhost:4000/images/users/` + user.user.image } alt="Imagen Usuario Conectado"/>
-                <h4>{user.user.name}</h4>
+              <img src={`http://localhost:4000/images/users/` + user.user.image } alt="Imagen Usuario Conectado"/> 
+                <h3>{user.user.name}</h3>
                 <h4>{user.user.email}</h4>
             </div>
             
@@ -36,7 +41,7 @@ const Header = () => {
         </ul>
             {user ?
             <div className="logout">
-            <Link to="/login" onClick={onLogout}><span>Logout</span></Link>
+            <Link to="/login" onClick={onLogout}><p>Logout</p></Link>
             </div>
             :
             <ul>
