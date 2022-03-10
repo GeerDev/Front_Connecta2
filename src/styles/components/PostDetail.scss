@@ -1,27 +1,38 @@
-.postdetail {
-    display: flex;
-    padding: 2em;
-    height: 90vh;
-}
+    .postdetail {
+        display: flex;
+        padding: 2em;
+        height: 90vh;
+        font-family: $font;
+    }
 
-.columnleft {
-    border-right: 3px solid white;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .columnleft {
+        border-right: 3px solid white;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        img {
+            width: 33vw;
+            border-radius: 2em;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        h4 {
+            font-size: 1.3em;
+            color: $GrayColor;
+        }
+    }
 
-.columnright {
-    width: 50%;
-    margin-left: 2em;
-}
+    .columnright {
+        width: 50%;
+        margin-left: 2em;
+    }
 
-.posts {
-    height: 70vh;
-}
-
-.addComment {
-    
-}
+    .posts2 {
+        margin-top: 1em;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+    }

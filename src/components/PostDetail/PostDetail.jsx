@@ -16,24 +16,26 @@ const PostDetail = () => {
   useEffect(() => {
     dispatch(getById(_id));
   }, []);
-console.log(post);
+
+  const test1 = post.createdAt.slice(0, 10);
+
   return (
     <div className="postdetail">
       <div className="columnleft">
-          <h2>Título: { post.title }</h2>
-          <p>Descripción: { post.description }</p>
-
           <img
           src={`http://localhost:4000/images/posts/` + post.image}
           alt="Imagen Post"
           width={320}
           />
-
-          <p>Post creado: { post.createdAt }</p> 
-
+          {
+            post.likes && <h4>Likes: { post.likes.length }</h4>
+          }
+          <h2>{ post.title }</h2>
+          <p>{ post.description }</p>
+          <p>Post creado: { test1 }</p> 
       </div>
       <div className="columnright">
-            <div className="posts">
+            <div className="posts2">
             {
             post.comments && post.comments.map(post => (
                 <div key = {crypto.randomUUID()}>
