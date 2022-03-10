@@ -17,8 +17,6 @@ const PostDetail = () => {
     dispatch(getById(_id));
   }, []);
 
-  const test1 = post.createdAt.slice(0, 10);
-
   return (
     <div className="postdetail">
       <div className="columnleft">
@@ -32,7 +30,7 @@ const PostDetail = () => {
           }
           <h2>{ post.title }</h2>
           <p>{ post.description }</p>
-          <p>Post creado: { test1 }</p> 
+          <p>Post creado: { post.createdAt }</p>
       </div>
       <div className="columnright">
             <div className="posts2">

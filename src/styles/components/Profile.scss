@@ -1,0 +1,71 @@
+.profile {
+    display: flex;
+    padding: 2em;
+    font-family: $font;
+}
+.profile_user {
+    border-right: 3px solid white;
+    width: 50%;
+    padding-right: 2em;
+    img {
+        margin-bottom: .7em;
+    }
+}
+
+.profile_search {
+    margin-left: 2em;
+    width: 40%;
+    input {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}
+
+.inside {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1em;
+
+}
+
+.imageandtext {
+    display: flex;
+    gap:1em;
+    img {
+        border-radius: 150px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.profile_user-all {
+    display: flex;
+    gap: 3em;
+}
+
+.element_search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 320px;
+    background-color: $Dark1Color;
+    border-radius: 2em;
+    img {
+        border-radius: 2em 2em 0 0;
+    }
+}
+
+.centrateporDIOS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.followbutton {
+    width: 10em;
+    padding: .5em;
+    margin-bottom: 1em;
+}

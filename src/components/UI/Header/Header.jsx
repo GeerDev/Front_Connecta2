@@ -17,7 +17,7 @@ const Header = () => {
     navigate("/");
   };
 
-  if (user === null) return <p>de parrafo</p>
+  if (user === null) return <p>de perro</p>
 
   return (
     <nav className = "navbar">
