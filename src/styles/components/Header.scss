@@ -25,6 +25,12 @@
     gap: 2em;
     li {
         color: $Ohisawhitecolor;
+        width: 22em;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    li:hover {
+        border-right: 5px solid #fed373;
     }
 }
 

@@ -16,7 +16,7 @@ const UIModal = ({visible, setVisible}) => {
     setFormData({...post})
    },[post])
  
-   const handleOk = (_id) => {
+   const handleOk = () => {
      dispatch(editPost(formData))
      setVisible(false)
    };

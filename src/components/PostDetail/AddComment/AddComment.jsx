@@ -32,13 +32,13 @@ const AddComment = ({_id}) => {
     }
 
   return (
-    <>
-    <h2>Añade un comentario</h2>
+    <div className='order'>
+    <h3>Añade un comentario</h3>
     <form onSubmit={onSubmit}>
         <input type="text" name="comment" value={comment} onChange={onChange}/>
             <button type="submit">Añade un comentario Crack</button>
     </form>
-    </>
+    </div>
   )
 }
 

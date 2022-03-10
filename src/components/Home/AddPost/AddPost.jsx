@@ -8,33 +8,21 @@ const AddPost = () => {
 
   const dispatch = useDispatch()
 
-  const [formData, setFormData] = useState({
-    title:'',
-    description:'',
-    imagePost: ''
-  })
-
-  const { title , description } = formData
-
-  const onChange = (e)=>{
-    setFormData((prevState)=> ({
-        ...prevState,
-        [e.target.name]:e.target.value,
-    }))
-  }
-
   const onSubmit = (e) => {
-    console.log(e.target.imagePost.files[0]);
     e.preventDefault()
-    console.log(formData)
+    console.log(e.target.title.value);
+    const formData = new FormData();
+    if (e.target.imagePost.files[0]) formData.set('imagePost', e.target.imagePost.files[0]);
+    formData.set('title', e.target.title.value)
+    formData.set('description', e.target.description.value)
     dispatch(addPost(formData)) 
   }
 
   return (
     <form onSubmit={onSubmit} className='form'>
-        <input type="file" name="imagePost" onChange={onChange}/>
-        <input type="text" name="title" value={title} onChange={onChange}/>
-        <input type="text" name="description" value={description} onChange={onChange}/>
+        <input type="file" name="imagePost"/>
+        <input type="text" placeholder="Título..." name="title" />
+        <input type="text" placeholder="Descripción..." name="description" />
     <button type="submit">Añade una publicación</button>
     </form>
   )

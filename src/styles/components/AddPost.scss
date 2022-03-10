@@ -13,6 +13,7 @@ input {
 
 button {
     background: $Dark2Color;
+    padding: 0 .7em;
     @extend %button;
 
     &:hover {

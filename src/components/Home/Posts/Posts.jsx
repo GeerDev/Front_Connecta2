@@ -18,6 +18,8 @@ const Posts = () => {
   },[])
 
   return (
+    <>
+    <h2 className='title'>Publicaciones</h2>
     <div className='posts'>
     {
       arrayPosts.map(post => (
@@ -28,6 +30,7 @@ const Posts = () => {
       ))
     }
     </div>
+    </>
   )
 }
 

@@ -1,0 +1,27 @@
+.postdetail {
+    display: flex;
+    padding: 2em;
+    height: 90vh;
+}
+
+.columnleft {
+    border-right: 3px solid white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.columnright {
+    width: 50%;
+    margin-left: 2em;
+}
+
+.posts {
+    height: 70vh;
+}
+
+.addComment {
+    
+}
