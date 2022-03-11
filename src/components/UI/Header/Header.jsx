@@ -28,7 +28,7 @@ const Header = () => {
             <span className='logo_text'>Connecta2</span>
             </div>
             <div className="info_usuario">
-              <img src={`http://localhost:4000/images/users/` + user.user.image } alt="Imagen Usuario Conectado"/> 
+              {user.user.image && <img src={`http://localhost:4000/images/users/` + user.user.image } alt="Imagen Usuario Conectado"/> }
                 <h3>{user.user.name}</h3>
                 <h4>{user.user.email}</h4>
             </div>
