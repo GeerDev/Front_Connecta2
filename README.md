@@ -6,14 +6,14 @@ _Una aplicación hecha con React que emula el comportamiento de una red social_
 
 En el proyecto utilizamos distintas funcionalidades que nos proporciona React:
 
-● Registro de usuarios.
-● Login de usuarios.
-● Que se pueda ver las publicaciones y crear nuevas.
-● Que se puedan editar y eliminar las publicaciones que hace el usuario logeado
-● Dar/quitar Like a post.
-● Buscador de perfiles de usuario
-● Que en tu perfil puedas ver tus datos y tus posts
-● Que puedas comentar en las publicaciones
+* Registro de usuarios.
+* Login de usuarios.
+* Que se pueda ver las publicaciones y crear nuevas.
+* Que se puedan editar y eliminar las publicaciones que hace el usuario logeado
+* Dar/quitar Like a post.
+* Buscador de perfiles de usuario
+* Que en tu perfil puedas ver tus datos y tus posts
+* Que puedas comentar en las publicaciones
   
 ## ¿Como desplegar el proyecto? 📋
 
