@@ -4,6 +4,8 @@ import Register from "../components/Auth/Register/Register";
 import NotFound from "../components/NotFound/NotFound"
 import { MainRoutes } from "./MainRouter";
 
+import PrivateZone from "../guards/PrivateZone"
+
 export const AppRouter = () => {
     return (
         <Router>
@@ -12,7 +14,11 @@ export const AppRouter = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
     
-              <Route path="/main/*" element={ <MainRoutes />  } />
+              <Route path="/main/*" element={ 
+                    <PrivateZone>
+                         <MainRoutes /> 
+                    </PrivateZone> 
+              } />
               <Route path="*" element={ <NotFound />  } />
           </Routes>
         </Router>

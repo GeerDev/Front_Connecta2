@@ -44,7 +44,7 @@ const Register = () => {
               <input type="text" name="name" value={name} onChange={onChange} placeholder={'Nombre'}/>
               <input type="email" name="email" value={email} onChange={onChange} placeholder={'Email'}/>
               <input type="password" name="password" value={password} onChange={onChange} placeholder={'Contraseña'}/>
-              <button type="submit">Register</button>
+              <button type="submit">Registrate</button>
           </div>
         </form>
         <div className='register_image'>
