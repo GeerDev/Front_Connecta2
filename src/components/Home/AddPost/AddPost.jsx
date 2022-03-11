@@ -19,7 +19,7 @@ const AddPost = () => {
   }
 
   return (
-    <form onSubmit={onSubmit} className='form'>
+    <form onSubmit={onSubmit} className='form card animate__animated animate__fadeIn'>
         <input type="file" name="imagePost"/>
         <input type="text" placeholder="Título..." name="title" />
         <input type="text" placeholder="Descripción..." name="description" />

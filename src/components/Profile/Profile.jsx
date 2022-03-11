@@ -11,7 +11,6 @@ const Profile = () => {
   const dispatch = useDispatch()
   const { userNow, userSearch } = useSelector( state => state.user )
   const { name, email, postsIds, image, followers, followings, favorites} = userNow.user || []
-  console.log(userNow.user);
 
   const [searchHook, setSearchHook] = useState({
       search : ''
@@ -43,26 +42,26 @@ const Profile = () => {
 
   return (
     <div className='profile'>
-      <div className="profile_user">
+      <div className="profile_user card animate__animated animate__fadeIn">
         <div className="profile_user-all">
             <div className="profile_user-image">
                 <img src={`http://localhost:4000/images/users/` + image } alt="Imagen Usuario Conectado"/>
                 <p>Hola <strong>{name}</strong>! Tu email es <em>{email}</em></p>
             </div>
-            <div className="profile_user-followers">
+            {/* <div className="profile_user-followers">
               <button className='followbutton'>Seguir</button>
                 <h3>Seguidores: </h3>
                 {followers && <p>{ followers.length }</p>}
                 <h3>Seguidos: </h3>
                 {followings && <p>{ followings.length }</p>}
-            </div>
+            </div> */}
         </div>
               <Tabs defaultActiveKey="1">
                   <TabPane tab="Tus publicaciones" key="1">
                     <div className="tabs">
                     {
                         postsIds && postsIds.map(post => (
-                            <div key = {post._id} className='inside'>
+                            <div key = {post._id} className='inside card animate__animated animate__fadeIn'>
                               <div className="imageandtext">
                                     <img
                                     src={`http://localhost:4000/images/posts/` + post.image}
@@ -87,7 +86,7 @@ const Profile = () => {
                   <div className="tabs">
                     {
                         favorites && favorites.map(post => (
-                            <div key = {post._id} className='inside'>
+                            <div key = {post._id} className='inside card animate__animated animate__fadeIn'>
                               <div className="imageandtext">
                                     <img
                                     src={`http://localhost:4000/images/posts/` + post.image}
@@ -110,7 +109,7 @@ const Profile = () => {
                   </TabPane>
               </Tabs>
       </div>
-      <div className="profile_search">
+      <div className="profile_search card animate__animated animate__fadeIn">
               <input type="text" name="search" value={search} onChange={onChange} placeholder='Busqueda...'/>
                                 {
                                 (search === '')
@@ -120,7 +119,7 @@ const Profile = () => {
                                 <div className="centrateporDIOS">
                                 {
                                   userSearch && userSearch.map(user => (
-                                    <div key = {user._id} className='element_search'>
+                                    <div key = {user._id} className='element_search card animate__animated animate__fadeIn'>
                                         { user.image && <img src={`http://localhost:4000/images/users/` + user.image } alt="Imagen Usuario Buscado" width={320}/>}
                                         <h3>{ user.name }</h3>
                                         <p>{ user.email }</p>

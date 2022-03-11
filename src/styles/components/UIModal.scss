@@ -1,4 +1,9 @@
-.ant-btn-primary { 
-    background-color: #fed373;
+.ant-modal-close {
+    all: unset;
+}
+
+.ant-modal-body {
+    display: flex;
+    gap:.7em;
 }
 

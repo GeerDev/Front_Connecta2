@@ -19,7 +19,7 @@ const PostDetail = () => {
 
   return (
     <div className="postdetail">
-      <div className="columnleft">
+      <div className="columnleft card animate__animated animate__fadeIn">
           <img
           src={`http://localhost:4000/images/posts/` + post.image}
           alt="Imagen Post"
@@ -32,7 +32,7 @@ const PostDetail = () => {
           <p>{ post.description }</p>
           <p>Post creado: { post.createdAt }</p>
       </div>
-      <div className="columnright">
+      <div className="columnright card animate__animated animate__fadeIn">
             <div className="posts2">
             {
             post.comments && post.comments.map(post => (

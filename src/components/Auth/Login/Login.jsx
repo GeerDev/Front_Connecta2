@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { login } from '../../../features/auth/authSlice'
 
 import '../../../styles/main.scss';
@@ -41,7 +41,9 @@ const Login = () => {
         <div className='login_message card animate__animated animate__backInLeft'>
           <h3>El espacio donde las personas conectan</h3>
           <p>¿No estas todavia registrad@? ¡Registrate!</p>
+          <Link to="/register">
           <button>Crea una cuenta</button>
+          </Link>
         </div>
       </div>
     <form onSubmit={onSubmit} className='login_form'>

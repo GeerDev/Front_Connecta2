@@ -31,7 +31,7 @@ const Post = ({ _id, comments, likes, image, title }) => {
   const isAlreadyLiked = likes?.includes(user?.user._id);
 
   return (
-    <div key={_id} className="post contenedor">
+    <div key={_id} className="post contenedor card animate__animated animate__fadeIn">
      
         <img
           src={`http://localhost:4000/images/posts/` + image}

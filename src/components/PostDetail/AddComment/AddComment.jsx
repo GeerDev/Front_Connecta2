@@ -33,8 +33,8 @@ const AddComment = ({_id}) => {
 
   return (
     <>
-    <h3>Añade un comentario: </h3>
-    <div className='order'>
+    <h3 className='card animate__animated animate__fadeIn'>Añade un comentario: </h3>
+    <div className='order card animate__animated animate__fadeIn'>
     <form onSubmit={onSubmit}>
         <input type="text" name="comment" value={comment} onChange={onChange}/>
             <button type="submit">¿Para que servirá este botón?</button>

@@ -20,7 +20,7 @@ const Header = () => {
   if (user === null) return <p>de perro</p>
 
   return (
-    <nav className = "navbar">
+    <nav className = "navbar card animate__animated animate__fadeIn">
         <Link to="/main/home">
         <div className='logo'>
           <div className="logo_principal">

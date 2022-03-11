@@ -19,7 +19,7 @@ const Posts = () => {
 
   return (
     <>
-    <h2 className='title'>Publicaciones</h2>
+    <h2 className='title card animate__animated animate__fadeIn'>Publicaciones</h2>
     <div className='posts'>
     {
       arrayPosts.map(post => (
